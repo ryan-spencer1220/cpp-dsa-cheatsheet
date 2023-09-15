@@ -13,7 +13,7 @@ SinglyLinkedList::SinglyLinkedList(const SinglyLinkedList &linkedList)
   Node *curr = linkedList.head;
   while (curr)
   {
-    insert(curr->data);
+    append(curr->val);
     curr = curr->next;
   }
 }
@@ -27,4 +27,27 @@ SinglyLinkedList::~SinglyLinkedList()
     curr = curr->next;
     delete temp;
   }
+}
+
+void SinglyLinkedList::append(int val)
+{
+  Node *newNode = new Node(val);
+  Node *temp = head;
+  head = newNode;
+  head->next = temp;
+}
+
+void SinglyLinkedList::print()
+{
+  Node *curr = head;
+  print(curr);
+}
+
+void SinglyLinkedList::print(Node *root)
+{
+  if (!root)
+    return;
+
+  cout << root->val << " ";
+  print(root->next);
 }

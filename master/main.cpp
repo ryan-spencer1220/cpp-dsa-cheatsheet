@@ -1,8 +1,17 @@
-#include "heap/heap.h"
-#include "queue/queue.h"
-#include "stack/stack.h"
-#include "tree/tree.h"
 #include "singleLL/singleLL.h"
-#include "doubleLL/doubleLL.h"
 
 #include <iostream>
+using namespace std;
+
+int main()
+{
+  SinglyLinkedList newList;
+  newList.append(20);
+  newList.append(14);
+  newList.append(2);
+  newList.append(12);
+
+  newList.print();
+
+  return 0;
+}

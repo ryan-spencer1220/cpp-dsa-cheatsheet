@@ -27,9 +27,6 @@ public:
   Node *findMiddleNode(Node *, Node *);
   bool hasLoop();
   bool hasLoop(Node *, Node *);
-  Node *findKthNodeToEnd(int);
-  Node *findKthNodeToEnd(Node *, int, int);
-  void partitionList(int);
   void removeDuplicates();
   void binaryToDecimal();
   void reverseBetween(int, int);

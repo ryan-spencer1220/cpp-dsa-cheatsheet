@@ -21,11 +21,11 @@ SinglyLinkedList::SinglyLinkedList(const SinglyLinkedList &linkedList)
 SinglyLinkedList::~SinglyLinkedList()
 {
   Node *curr = head;
-  while (curr)
+  while (head)
   {
-    Node *temp = curr;
-    curr = curr->next;
-    delete temp;
+    head = head->next;
+    delete curr;
+    curr = head;
   }
 }
 
@@ -166,20 +166,25 @@ bool SinglyLinkedList::hasLoop(Node *slow, Node *fast)
   return hasLoop(slow->next, fast->next->next);
 }
 
-Node *SinglyLinkedList::findKthNodeToEnd(int k)
+void SinglyLinkedList::removeDuplicates()
 {
-  return findKthNodeToEnd(head, k, 0);
-}
-
-Node *SinglyLinkedList::findKthNodeToEnd(Node *head, int k, int count)
-{
-  if (!head)
-    return;
-
-  if (count == length - k)
+  Node *curr = head;
+  while (curr)
   {
-    return head;
+    Node *temp = curr;
+    while (temp && temp->next)
+    {
+      if (curr->val == temp->next->val)
+      {
+        Node *duplicate = temp->next;
+        temp->next = temp->next->next;
+        delete duplicate;
+      }
+      else
+      {
+        temp = temp->next;
+      }
+    }
+    curr = curr->next;
   }
-
-  findKthNodeToEnd(head->next, k, count + 1);
 }

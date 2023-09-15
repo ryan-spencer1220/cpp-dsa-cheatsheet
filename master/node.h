@@ -10,6 +10,7 @@ public:
 
   Node();
   Node(int val);
+  Node(int val, Node *next);
 
   Node(Node *node);
   void operator=(const Node &node);

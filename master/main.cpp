@@ -13,10 +13,22 @@ int main()
   newList.append(14);
   newList.append(2);
   newList.append(12);
+  newList.append(12);
+  newList.append(12);
+  newList.append(12);
+  newList.append(12);
+  newList.append(12);
+  newList.append(12);
 
   newList.insert(3, 100000);
 
   cout << "Original list: ";
+  newList.print();
+
+  cout << endl;
+
+  cout << "Reverse list: ";
+  newList.reverse();
   newList.print();
 
   cout << endl;
@@ -33,6 +45,10 @@ int main()
   cout << "Has loop: ";
   string loopFlag = (newList.hasLoop() == 1) ? "true" : "false";
   cout << loopFlag << endl;
+
+  cout << "Remove duplicates: ";
+  newList.removeDuplicates();
+  newList.print();
 
   return 0;
 }

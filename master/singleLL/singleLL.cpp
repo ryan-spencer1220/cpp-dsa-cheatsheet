@@ -29,12 +29,34 @@ SinglyLinkedList::~SinglyLinkedList()
   }
 }
 
-void SinglyLinkedList::append(int val)
+void SinglyLinkedList::prepend(int val)
 {
   Node *newNode = new Node(val);
   Node *temp = head;
   head = newNode;
   head->next = temp;
+}
+
+void SinglyLinkedList::append(int val)
+{
+  append(head, val);
+}
+
+void SinglyLinkedList::append(Node *root, int val)
+{
+  if (!root)
+  {
+    head = new Node(val);
+    return;
+  }
+
+  if (!root->next)
+  {
+    root->next = new Node(val);
+    return;
+  }
+
+  append(root->next, val);
 }
 
 void SinglyLinkedList::print()

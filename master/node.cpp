@@ -11,8 +11,3 @@ Node::Node(int val)
   this->val = val;
   next = nullptr;
 }
-
-Node::~Node()
-{
-  delete next;
-}

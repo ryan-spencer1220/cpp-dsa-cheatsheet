@@ -1,4 +1,4 @@
-#include "../master/node.h"
+#include "../node.h"
 #include <iostream>
 
 using namespace std;
@@ -13,6 +13,7 @@ public:
 
   // add & remove functions
   void append(int);
+  void append(Node *, int);
   void prepend(int);
   void insert(int);
   void remove(int);
@@ -21,7 +22,7 @@ public:
 
   // other functions
   void print();
-  void print(Node *root);
+  void print(Node *);
   int size();
   bool isEmpty();
   int indexOf(int);

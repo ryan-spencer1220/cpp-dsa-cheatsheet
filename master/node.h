@@ -1,3 +1,7 @@
+#include <iostream>
+
+using namespace std;
+
 class Node
 {
 public:
@@ -6,7 +10,6 @@ public:
 
   Node();
   Node(int val);
-  ~Node();
 
   Node(Node *node);
   void operator=(const Node &node);
